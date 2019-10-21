@@ -1,22 +1,32 @@
 pipeline {
   agent any
   stages {
-    stage('stage1') {
+    stage('Create OKE Cluster') {
       steps {
         sh '''#!/bin/sh
 echo "Stage1"'''
       }
     }
-    stage('Stage 2') {
+    stage('Deploy 2 OKE') {
       steps {
         sh '''#!/bin/sh
 echo "Stage2"'''
       }
     }
-    stage('stage 3') {
+    stage('Validate OKE deployment') {
       steps {
         sh '''#!/bin/sh
 echo "Stage3"'''
+      }
+    }
+    stage('Cleanup Cluster') {
+      steps {
+        echo 'Cleanup'
+      }
+    }
+    stage('Cleanup OKE') {
+      steps {
+        echo 'cleanup oke'
       }
     }
   }
