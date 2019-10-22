@@ -4,7 +4,8 @@ pipeline {
     stage('Create OKE Cluster') {
       steps {
         sh '''#!/bin/sh
-echo "Stage1"'''
+echo "Stage1"
+echo ${BUILD_NUMBER} '''
       }
     }
     stage('Deploy 2 OKE') {
