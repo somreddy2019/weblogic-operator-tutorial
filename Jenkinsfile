@@ -28,6 +28,8 @@ echo "Stage3"'''
     stage('Cleanup OKE') {
       steps {
         echo 'cleanup oke'
+        sh '''#!/bin/sh
+echo ${BUILD_NUMBER} '''
       }
     }
   }
